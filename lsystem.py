@@ -5,16 +5,14 @@ def derivation(axiom, steps):
     derived = [axiom]  # seed
     for i in range(steps):
         next_seq = derived[-1]
-        next_axiom = [rules(char) for char in next_seq]
+        next_axiom = [rule(char) for char in next_seq]
         derived.append(''.join(next_axiom))
     return derived
 
 
-def rules(sequence):
-    if sequence == "F":
-        return "F+f-FF+F+FF+Ff+FF-f+FF-F-FF-Ff-FFF"  # quad_comb
-    elif sequence == "f":
-        return "ffffff"
+def rule(sequence):
+    if sequence in rules:
+        return rules[sequence]
     else:
         return sequence
 
@@ -28,7 +26,7 @@ def draw_l_system(turtle, rules, seg_length, angle):
             turtle.pu()  # pen up - not drawing
             turtle.forward(seg_length)
         elif rule == "+":
-            turtle.left(angle)
+            turtle.left(angle)  # adjust these angles to tilt on y axis
         elif rule == "-":
             turtle.right(angle)
 
@@ -37,32 +35,36 @@ def set_turtle():
     global t, ts
     t = turtle.Turtle()  # turtle
     ts = turtle.Screen()  # create graphics window
+    ts.screensize(1000, 1000)
     t.pu()
-    t.back(0)
-    t.speed(100)
-    t.setheading(90)
+    # t.back(100) # adjust or comment out as needed
+    t.speed(150)
+    t.setheading(0)
 
-
-def quad_snowflake_curve():
-    # A quadratic modification of the snowflake curve
-    model = derivation("-F", 4)
-    draw_l_system(t, model[-1], 5, 90)  # draw model
-
-
-def quad_koch_island():
-    # Quadratic Kock island
-    model = derivation("F-F-F-F", 2)
-    draw_l_system(t, model[-1], 5, 90)
-
-
-def quad_combo():
-    # Combination of islands and lakes
-    model = derivation("F+F+F+F", 2)
-    draw_l_system(t, model[-1], 5, 90)
 
 def main():
+    global rules
+    rules = dict()
+    rule_num = 1
+    while True:
+        rule = input("Enter rule[%d]:rewrite term (0 when done): " % rule_num)
+        if rule == '0':
+            break
+        key, value = rule.split(":")
+        rules[key] = value
+        rule_num += 1
+    print("\nL-System notes -> %s\n" % rules)
+
     set_turtle()
-    quad_combo()
+
+    axiom = input("Enter axiom (initial string): ")
+    iterations = int(input("Enter number of iterations (n): "))
+    model = derivation(axiom, iterations)  # axiom (initial string), nth iterations
+
+    segment_length = int(input("Enter step size (segment length): "))
+    angle = int(input("Enter angle: "))
+    draw_l_system(t, model[-1], segment_length, angle)  # draw model (turtle, generator, segment length, angle)
+
     ts.exitonclick()
 
 

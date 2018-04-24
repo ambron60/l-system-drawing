@@ -1,0 +1,27 @@
+def rules(sequence):
+    if sequence == "A":  # rule 1
+        return "AB"
+    elif sequence == "B":  # rule 2
+        return "A"
+    else:
+        return None
+
+in main():
+
+    #print(derivation("B", 7)) # fibostrings
+
+
+set_turtle()
+model = derivation("L", 5) # axiom, nth iterations
+draw_l_system(t, model[-1], 5, 90)  # draw model (turtle, generator, segment length, angle)
+ts.exitonclick()
+
+def rules(sequence):
+    if sequence == "L":
+        return "+RF-LFL-FR+"
+    elif sequence == "R":
+        return "-LF+RFR+FL-"
+    elif sequence == "f":
+        return "ffffff"
+    else:
+        return sequence
