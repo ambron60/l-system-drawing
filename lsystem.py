@@ -12,7 +12,7 @@ def derivation(axiom, steps):
 
 def rules(sequence):
     if sequence == "F":
-        return "F+f-FF+F+FF+Ff+FF-f+FF-F-FF-Ff-FFF"  # quad_combo
+        return "F+f-FF+F+FF+Ff+FF-f+FF-F-FF-Ff-FFF"  # quad_comb
     elif sequence == "f":
         return "ffffff"
     else:
