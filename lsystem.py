@@ -35,7 +35,7 @@ def set_turtle():
     global t, ts
     t = turtle.Turtle()  # turtle
     ts = turtle.Screen()  # create graphics window
-    ts.screensize(1000, 1000)
+    ts.screensize(1500, 1500)
     t.pu()
     # t.back(100) # adjust or comment out as needed
     t.speed(150)
