@@ -6,6 +6,15 @@ def rules(sequence):
     else:
         return None
 
+def fibostrings(sequence):
+    if sequence == "A":  # rule 1
+        return "AB"
+    elif sequence == "B":  # rule 2
+        return "A"
+    else:
+        return None
+
+
 in main():
 
     #print(derivation("B", 7)) # fibostrings
