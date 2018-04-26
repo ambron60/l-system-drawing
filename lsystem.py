@@ -26,7 +26,7 @@ def draw_l_system(turtle, rules, seg_length, angle):
             turtle.pu()  # pen up - not drawing
             turtle.forward(seg_length)
         elif rule == "+":
-            turtle.left(angle)  # adjust these angles to tilt on y axis
+            turtle.left(angle)
         elif rule == "-":
             turtle.right(angle)
 
