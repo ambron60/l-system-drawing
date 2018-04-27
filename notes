@@ -34,3 +34,16 @@ def rules(sequence):
         return "ffffff"
     else:
         return sequence
+
+Koch Curve:
+
+L-System notes -> {'F': 'F+F--F+F'}
+
+Enter axiom (initial string): F
+Enter number of iterations (n): 4
+Enter step size (segment length): 5
+Enter angle: 60
+
+Koch Snowflake:
+
+Same as above except: axiom (initial string): F--F--F

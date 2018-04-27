@@ -26,9 +26,9 @@ def draw_l_system(turtle, rules, seg_length, angle):
             turtle.pu()  # pen up - not drawing
             turtle.forward(seg_length)
         elif rule == "+":
-            turtle.right(angle)  # adjust these angles to tilt on y axis
-        elif rule == "-":
             turtle.left(angle)
+        elif rule == "-":
+            turtle.right(angle)
 
 
 def set_turtle():
@@ -53,16 +53,18 @@ def main():
         key, value = rule.split(":")
         rules[key] = value
         rule_num += 1
-    print("\nL-System notes -> %s" % rules)
-
-    axiom = input("\nEnter axiom (initial string): ")
-    iterations = int(input("Enter number of iterations (n): "))
-    model = derivation(axiom, iterations)  # axiom (initial string), nth iterations
-    segment_length = int(input("Enter step size (segment length): "))
-    angle = int(input("Enter angle: "))
+    print("\nL-System notes -> %s\n" % rules)
 
     set_turtle()
+
+    axiom = input("Enter axiom (initial string): ")
+    iterations = int(input("Enter number of iterations (n): "))
+    model = derivation(axiom, iterations)  # axiom (initial string), nth iterations
+
+    segment_length = int(input("Enter step size (segment length): "))
+    angle = int(input("Enter angle: "))
     draw_l_system(t, model[-1], segment_length, angle)  # draw model (turtle, generator, segment length, angle)
+
     ts.exitonclick()
 
 
