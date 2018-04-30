@@ -21,7 +21,7 @@ def draw_l_system(turtle, rules, seg_length, angle):
     # global heading, position
     for command in rules:
         turtle.pd()
-        if command in ["F", "G"]:
+        if command in ["F", "G", "R", "L"]:
             turtle.forward(seg_length)
         elif command == "f":
             turtle.pu()  # pen up - not drawing
@@ -32,7 +32,8 @@ def draw_l_system(turtle, rules, seg_length, angle):
             turtle.right(angle)
         print(get_turtle_state(turtle))
 
-def set_turtle():
+
+def set_turtle(alpha_zero):
     global t, ts
     t = turtle.Turtle()  # turtle
     ts = turtle.Screen()  # create graphics window
@@ -40,7 +41,7 @@ def set_turtle():
     t.pu()
     # t.back(300) # move the turtle backward by distance, opposite to heading
     t.speed(100)  # adjust as needed
-    t.setheading(0)
+    t.setheading(alpha_zero)  # initial heading
 
 
 def get_turtle_state(turtle):
@@ -59,16 +60,17 @@ def main():
         rules[key] = value
         rule_num += 1
 
-    set_turtle()
-
     axiom = input("Enter axiom (initial string): ")
     iterations = int(input("Enter number of iterations (n): "))
+
     model = derivation(axiom, iterations)  # axiom (initial string), nth iterations
 
     segment_length = int(input("Enter step size (segment length): "))
+    alpha_zero = float(input("Enter initial heading (alpha-0): "))
     angle = float(input("Enter angle: "))
-    draw_l_system(t, model[-1], segment_length, angle)  # draw model (turtle, generator, segment length, angle)
 
+    set_turtle(alpha_zero)
+    draw_l_system(t, model[-1], segment_length, angle)  # draw model (turtle, generator, segment length, angle)
     ts.exitonclick()
 
 
