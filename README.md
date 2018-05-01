@@ -35,3 +35,11 @@ Here's an example of a plant-like generated OL-system using the bracketed sequen
 ## Curves
 
 > TODO
+
+## Support
+
+> TODO
+
+## License
+
+> TODO
