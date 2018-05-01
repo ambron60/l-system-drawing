@@ -17,7 +17,7 @@ def fibostrings(sequence):
 
 in main():
 
-    #print(derivation("B", 7)) # fibostrings
+#print(derivation("B", 7)) # fibostrings
 
 
 set_turtle()
@@ -47,3 +47,17 @@ Enter angle: 60
 Koch Snowflake:
 
 Same as above except: axiom (initial string): F--F--F
+
+elif rule == "[":
+    position, heading = get_turtle_state(turtle)
+    print(position, heading)
+elif rule == "]":
+    set_turtle_state(turtle, position, heading)
+
+def set_turtle_state(turtle, position, heading):
+    turtle.setposition(position)
+    turtle.setheading(heading)
+
+
+def get_turtle_state(turtle):
+    return turtle.position(), turtle.heading()
