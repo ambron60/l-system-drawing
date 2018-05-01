@@ -16,3 +16,7 @@ of Plants** by Przemyslaw Prusinkiewicz and Aristid Lindenmayer.
 - [FAQ](#faq)
 - [Support](#support)
 - [License](#license)
+
+## Installation
+
+- All the `code` required to get started is in the file (lsystem.py). Only a working installation of Python 3 is necessary.
