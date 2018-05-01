@@ -27,7 +27,10 @@ of Plants** by Przemyslaw Prusinkiewicz and Aristid Lindenmayer [[Book]](http://
 
 Following the same rewriting rules, this project is capable of creating [[Fractals]]() of different forms via a recursive given set of rules input by the user (see [Usage](#Usage) section).
 
-## Usage (Optional)
-## Documentation (Optional)
-## Tests (Optional)
+## Usage
 
+> TODO
+
+## Curves (Optional)
+
+> TODO
