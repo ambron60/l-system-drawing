@@ -18,7 +18,7 @@ def rule(sequence):
 
 
 def draw_l_system(turtle, rules, seg_length, angle):
-    # global heading, position
+    stack = list()
     for command in rules:
         turtle.pd()
         if command in ["F", "G", "R", "L"]:
@@ -27,10 +27,16 @@ def draw_l_system(turtle, rules, seg_length, angle):
             turtle.pu()  # pen up - not drawing
             turtle.forward(seg_length)
         elif command == "+":
-            turtle.left(angle)
-        elif command == "-":
             turtle.right(angle)
-        print(get_turtle_state(turtle))
+        elif command == "-":
+            turtle.left(angle)
+        elif command == "[":
+            stack.append((turtle.position(), turtle.heading()))
+        elif command == "]":
+            turtle.pu()  # pen up - not drawing
+            position, heading = stack.pop()
+            turtle.goto(position)
+            turtle.setheading(heading)
 
 
 def set_turtle(alpha_zero):
@@ -43,12 +49,8 @@ def set_turtle(alpha_zero):
     t.screen.title("Fractal Curve")
     t.pu()
     # t.back(300) # move the turtle backward by distance, opposite to heading
-    t.speed(100)  # adjust as needed
+    t.speed(0.2)  # adjust as needed
     t.setheading(alpha_zero)  # initial heading
-
-
-def get_turtle_state(turtle):
-    return turtle.position(), turtle.heading()
 
 
 def main():
