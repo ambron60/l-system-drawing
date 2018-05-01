@@ -33,6 +33,6 @@ Here's an example of a plant-like generated OL-system using the bracketed sequen
 
 ![Alt Text](https://media.giphy.com/media/443krfSzd7qRq6Q8pb/giphy.gif)
 
-## Curves (Optional)
+## Curves
 
 > TODO
