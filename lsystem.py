@@ -45,7 +45,7 @@ def set_turtle(alpha_zero):
     ts = turtle.Screen()  # create graphics window
     ts.screensize(1500, 1500)
     t.screen.title("Fractal Curve")
-    t.speed(6)  # adjust as needed (0 = fastest)
+    t.speed(0)  # adjust as needed (0 = fastest)
     t.setheading(alpha_zero)  # initial heading
 
 
