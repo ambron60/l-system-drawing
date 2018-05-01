@@ -27,9 +27,9 @@ def draw_l_system(turtle, rules, seg_length, angle):
             turtle.pu()  # pen up - not drawing
             turtle.forward(seg_length)
         elif command == "+":
-            turtle.right(angle)
-        elif command == "-":
             turtle.left(angle)
+        elif command == "-":
+            turtle.right(angle)
         elif command == "[":
             stack.append((turtle.position(), turtle.heading()))
         elif command == "]":
@@ -44,12 +44,8 @@ def set_turtle(alpha_zero):
     t = turtle.Turtle()  # turtle
     ts = turtle.Screen()  # create graphics window
     ts.screensize(1500, 1500)
-    t.screen.bgcolor("black")
-    t.color("white")
     t.screen.title("Fractal Curve")
-    t.pu()
-    # t.back(300) # move the turtle backward by distance, opposite to heading
-    t.speed(0.2)  # adjust as needed
+    t.speed(6)  # adjust as needed (0 = fastest)
     t.setheading(alpha_zero)  # initial heading
 
 
