@@ -42,4 +42,4 @@ Here's an example of a plant-like generated OL-system using the bracketed sequen
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE.md file for details [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ambron60/l-system-drawing/blob/master/LICENSE.md)
+This project is licensed under the MIT License - see the LICENSE.md file for details at -> [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ambron60/l-system-drawing/blob/master/LICENSE.md)
