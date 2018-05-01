@@ -38,7 +38,7 @@ Here's an example of a plant-like generated OL-system using the bracketed sequen
 
 ## Support
 
-> TODO
+- Author: **Gianni Perez** @ [SKYLABUS.COM](https://www.skylabus.com) or at gianni.perez@us.ibm.com
 
 ## License
 
