@@ -11,7 +11,7 @@ of Plants** by Przemyslaw Prusinkiewicz and Aristid Lindenmayer [[Book]](http://
 
 - [Installation](#installation)
 - [Features](#features)
-- [Contributing](#contributing)
+- [Usage](#usage)
 - [Team](#team)
 - [FAQ](#faq)
 - [Support](#support)
