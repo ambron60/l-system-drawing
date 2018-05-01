@@ -31,7 +31,7 @@ Following the same rewriting rules, this project is capable of creating [[Fracta
 
 Here's an example of a plant-like generated OL-system using the bracketed sequence F->F[+F]F[-F]F. The rest of the parameters, such as the number of iterations (n), is shown in the below screenshot.
 
-(http://imgbox.com/gfAo026a)
+![Alt Text](http://imgbox.com/gfAo026a)
 
 ## Curves (Optional)
 
