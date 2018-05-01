@@ -42,4 +42,4 @@ Here's an example of a plant-like generated OL-system using the bracketed sequen
 
 ## License
 
-> TODO
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
