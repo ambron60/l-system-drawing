@@ -69,5 +69,16 @@ st(name="Koch Island",
          rules=list("L"="LL-R-R+L+L-R-RL+R+LLR-L+R+LL+R-LR-R-L+L+RR-",
                     "R"="+LL-R-R+L+LR+L-RR-L-R+LRR-L-RL+L+R-R-L+L+RR"),
          angle=90,
-         n=2,
+         n=2, length=10
          alfa0=90))
+
+Box fractal:
+
+F->F-F+F+F-FF-F+F+F-F
+
+F-F-F-F
+n=4
+seg length = 4
+alpha = 90
+angle = 90
+
