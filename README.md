@@ -32,6 +32,19 @@ Here's an example of a plant-like generated OL-system using the bracketed sequen
 
 ![Alt Text](https://media.giphy.com/media/443krfSzd7qRq6Q8pb/giphy.gif)
 
+For example, to create a [Dragon Curve](http://mathworld.wolfram.com/DragonCurve.html) enter the following:
+
+```
+Enter rule[1]:rewrite term (0 when done): L->L+R+
+Enter rule[2]:rewrite term (0 when done): R->-L-R
+Enter rule[3]:rewrite term (0 when done): 0
+Enter axiom (initial string): L
+Enter number of iterations (n): 10
+Enter step size (segment length): 5
+Enter initial heading (alpha-0): 90
+Enter angle: 90
+```
+
 ## Curves
 
 > TODO
