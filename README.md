@@ -12,7 +12,7 @@ of Plants** by Przemyslaw Prusinkiewicz and Aristid Lindenmayer [[Book]](http://
 - [Installation](#installation)
 - [Features](#features)
 - [Usage](#usage)
-- [Team](#team)
+- [Curves](#curves)
 - [FAQ](#faq)
 - [Support](#support)
 - [License](#license)
