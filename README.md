@@ -62,7 +62,7 @@ Axial Tree (node-rewriting) | X->F-[[X]+X]+F[+FX]-X F->FF w=X n=5 alpha0=90 angl
 
 For questions or comments:
 
-- Author: **Gianni Perez** @ [SKYLABUS.COM](https://www.skylabus.com) or at gianni.perez@us.ibm.com
+- Author: **Gianni Perez** @ [skylabus.com](https://www.skylabus.com) or at gianni.perez@us.ibm.com
 - [![](http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png)](http://uk.linkedin.com/in/gianni-perez)
 
 
