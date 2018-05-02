@@ -61,14 +61,14 @@ def main():
         rules[key] = value
         rule_num += 1
 
-    axiom = input("Enter axiom (initial string): ")
+    axiom = input("Enter axiom (w): ")
     iterations = int(input("Enter number of iterations (n): "))
 
     model = derivation(axiom, iterations)  # axiom (initial string), nth iterations
 
     segment_length = int(input("Enter step size (segment length): "))
     alpha_zero = float(input("Enter initial heading (alpha-0): "))
-    angle = float(input("Enter angle: "))
+    angle = float(input("Enter angle increment (i): "))
 
     set_turtle(alpha_zero)
     draw_l_system(t, model[-1], segment_length, angle)  # draw model (turtle, generator, segment length, angle)
