@@ -22,7 +22,7 @@ of Plants** by Przemyslaw Prusinkiewicz and Aristid Lindenmayer [[Book]](http://
 
 ## Features
 
-L-systems lie at the heart of this project; however, the rewriting and geometric interpretation of such L-systems is accomplished via the [Turtle](https://docs.python.org/3.3/library/turtle.html?highlight=turtle#module-turtle) library in Python 3. The basic idea of turtle interpretation is given below. A state of the Turtle turtle is defined as a triplet (x, y, α), where the Cartesian coordinates (x, y) represent the turtle’s position, and the angle α, called the heading, is interpreted as the direction in which the turtle is facing. Given the step size d and the angle increment δ, the turtle can respond to commands represented by a given set of symbols (i.e., "F").
+L-systems lie at the heart of this project; however, the rewriting and geometric interpretation of such L-systems is accomplished via the [Turtle](https://docs.python.org/3.3/library/turtle.html?highlight=turtle#module-turtle) library in Python 3. The basic idea of turtle interpretation is given below. A state of the Turtle turtle is defined as a triplet (x, y, α), where the Cartesian coordinates (x, y) represent the turtle’s position, and the angle α, called the heading, is interpreted as the direction in which the turtle is facing. Given the step size d and the angle increment δ, the turtle can respond to commands represented by a given set of symbols (i.e., "F" meaning "move forward").
 
 Following the same rewriting rules, this project is capable of creating [[Fractals]](http://mathworld.wolfram.com/Fractal.html) of different forms via a recursive given set of rules input by the user (see [Usage](#usage) section).
 
