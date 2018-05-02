@@ -47,7 +47,11 @@ Enter angle: 90
 
 ## Curves
 
-> TODO
+Curve                   | Derivation 
+------------------------| --------------------------------------------------------
+Koch Island             | F->F-F+F+FF-F-F+F w=F-F-F-F n=2 alpha0=90 angle(i)=90
+Kock (1st variation)    | F->FF-F-F-F-F-F+F w=F-F-F-F n=3 alpha0=90 angle(i)=90
+Cuadratic Snowflake     | F->F+F-F-F+F w=-F n=4 alpha0=90 angle(i)=90
 
 ## Support
 
