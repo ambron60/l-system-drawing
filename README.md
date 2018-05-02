@@ -62,6 +62,8 @@ Hexagonal Gosper curve | L->L+R++R-L--LL-R+ R->-L+RR++R+L--L-R w=L n=4 alpha0=60
 For questions or comments:
 
 - Author: **Gianni Perez** @ [SKYLABUS.COM](https://www.skylabus.com) or at gianni.perez@us.ibm.com
+- [![](http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png)](http://uk.linkedin.com/in/gianni-perez)
+
 
 ## License
 
