@@ -45,9 +45,9 @@ Enter initial heading (alpha-0): 90
 Enter angle: 90
 ```
 
-## Curves
+## Axial Trees and Curves
 
-Curve | Derivation
+Figure | Derivation
 | --- | --- |
 Koch Island | F->F-F+F+FF-F-F+F w=F-F-F-F n=2 alpha0=90 angle(i)=90
 Koch (1st variation) | F->FF-F-F-F-F-F+F w=F-F-F-F n=3 alpha0=90 angle(i)=90
