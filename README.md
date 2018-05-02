@@ -1,6 +1,6 @@
 <img src="http://www.sidefx.com/docs/houdini/nodes/images/lsystems/roll5.png" alt="">
 
-# Py-L-Sys
+# L-System Graphical Modeling
 
 An L-system or Lindenmayer system is a parallel rewriting system and a type of formal grammar. An L-system consists of an alphabet of symbols that can be used to make strings, a collection of production rules that expand each symbol into some larger string of symbols, an initial "axiom" string from which to begin construction, and a mechanism for translating the generated strings into geometric structures [[LINK]](https://en.wikipedia.org/wiki/L-system)
 
@@ -28,7 +28,7 @@ Following the same rewriting rules, this project is capable of creating [[Fracta
 
 ## Usage
 
-Here's an example of a plant-like generated OL-system using the bracketed sequence F->F[+F]F[-F]F. The rest of the parameters, such as the number of iterations (n), is shown in the below screengrab.
+Here's an example of a plant-like generated L-system using the bracketed sequence F->F[+F]F[-F]F. The rest of the parameters, such as the number of iterations (n), is shown in the below screengrab.
 
 ![Alt Text](https://media.giphy.com/media/443krfSzd7qRq6Q8pb/giphy.gif)
 
@@ -53,6 +53,8 @@ Koch Island             | F->F-F+F+FF-F-F+F w=F-F-F-F n=2 alpha0=90 angle(i)=90
 Koch (1st variation)    | F->FF-F-F-F-F-F+F w=F-F-F-F n=3 alpha0=90 angle(i)=90
 Koch Islands and Lakes  | F->F+f-FF+F+FF+Ff+FF-f+FF-F-FF-Ff-FFF f->ffffff w=F+F+F+F n=2 alpha0=90 angle(i)=90                          
 Cuadratic Snowflake     | F->F+F-F-F+F w=-F n=4 alpha0=90 angle(i)=90
+
+> Note: Step size (segment length) is highly dependent on screen size, etc. Adjust as needed, but a good rule of thumb is a value between 5 and 15.
 
 ## Support
 
