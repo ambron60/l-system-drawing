@@ -45,6 +45,8 @@ Enter initial heading (alpha-0): 90
 Enter angle: 90
 ```
 
+> **Note**: Step size (segment length) is highly dependent on screen size, etc. Adjust as needed, but a good rule of thumb is a value between 5 and 15.
+
 ## Axial Trees and Curves
 
 Figure | Derivation
@@ -55,8 +57,6 @@ Koch Islands and Lakes | F->F+f-FF+F+FF+Ff+FF-f+FF-F-FF-Ff-FFF f->ffffff w=F+F+F
 Cuadratic Snowflake | F->F+F-F-F+F w=-F n=4 alpha0=90 angle(i)=90
 Hexagonal Gosper curve | L->L+R++R-L--LL-R+ R->-L+RR++R+L--L-R w=L n=4 alpha0=60 angle(i)=60
 Axial Tree (node-rewriting) | X->F-[[X]+X]+F[+FX]-X F->FF w=X n=5 alpha0=90 angle(i)=22.5
-
-> **Note**: Step size (segment length) is highly dependent on screen size, etc. Adjust as needed, but a good rule of thumb is a value between 5 and 15.
 
 ## Support
 
