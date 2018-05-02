@@ -45,7 +45,7 @@ Enter initial heading (alpha-0): 90
 Enter angle: 90
 ```
 
-> **Note**: Step size (segment length) is highly dependent on screen size, etc. Adjust as needed, but a good rule of thumb is a value between 5 and 15.
+> **Note**: Step size (segment length) is highly dependent on screen size, etc. Adjust as needed, but a good rule of thumb is a value between 5 and 10.
 
 ## Axial Trees and Curves
 
