@@ -1,9 +1,11 @@
 import turtle
 
+rules = {}  # generator rules
+
 
 def derivation(axiom, steps):
     derived = [axiom]  # seed
-    for i in range(steps):
+    for _ in range(steps):
         next_seq = derived[-1]
         next_axiom = [rule(char) for char in next_seq]
         derived.append(''.join(next_axiom))
@@ -13,12 +15,11 @@ def derivation(axiom, steps):
 def rule(sequence):
     if sequence in rules:
         return rules[sequence]
-    else:
-        return sequence
+    return sequence
 
 
 def draw_l_system(turtle, rules, seg_length, angle):
-    stack = list()
+    stack = []
     for command in rules:
         turtle.pd()
         if command in ["F", "G", "R", "L"]:
@@ -27,9 +28,9 @@ def draw_l_system(turtle, rules, seg_length, angle):
             turtle.pu()  # pen up - not drawing
             turtle.forward(seg_length)
         elif command == "+":
-            turtle.left(angle)
-        elif command == "-":
             turtle.right(angle)
+        elif command == "-":
+            turtle.left(angle)
         elif command == "[":
             stack.append((turtle.position(), turtle.heading()))
         elif command == "]":
@@ -40,18 +41,14 @@ def draw_l_system(turtle, rules, seg_length, angle):
 
 
 def set_turtle(alpha_zero):
-    global t, ts
-    t = turtle.Turtle()  # turtle
-    ts = turtle.Screen()  # create graphics window
-    ts.screensize(1500, 1500)
-    t.screen.title("Fractal Curve")
-    t.speed(0)  # adjust as needed (0 = fastest)
-    t.setheading(alpha_zero)  # initial heading
+    r_turtle = turtle.Turtle()  # recursive turtle
+    r_turtle.screen.title("L-System Derivation")
+    r_turtle.speed(0)  # adjust as needed (0 = fastest)
+    r_turtle.setheading(alpha_zero)  # initial heading
+    return r_turtle
 
 
 def main():
-    global rules
-    rules = dict()
     rule_num = 1
     while True:
         rule = input("Enter rule[%d]:rewrite term (0 when done): " % rule_num)
@@ -70,9 +67,12 @@ def main():
     alpha_zero = float(input("Enter initial heading (alpha-0): "))
     angle = float(input("Enter angle increment (i): "))
 
-    set_turtle(alpha_zero)
-    draw_l_system(t, model[-1], segment_length, angle)  # draw model (turtle, generator, segment length, angle)
-    ts.exitonclick()
+    # Set turtle parameters and draw L-System
+    r_turtle = set_turtle(alpha_zero)  # create turtle object
+    turtle_screen = turtle.Screen()  # create graphics window
+    turtle_screen.screensize(1500, 1500)
+    draw_l_system(r_turtle, model[-1], segment_length, angle)  # draw model
+    turtle_screen.exitonclick()
 
 
 if __name__ == "__main__":
