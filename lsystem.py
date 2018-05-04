@@ -1,6 +1,6 @@
 import turtle
 
-rules = {}  # generator rules
+SYSTEM_RULES = {}  # generator SYSTEM_RULES
 
 
 def derivation(axiom, steps):
@@ -13,14 +13,14 @@ def derivation(axiom, steps):
 
 
 def rule(sequence):
-    if sequence in rules:
-        return rules[sequence]
+    if sequence in SYSTEM_RULES:
+        return SYSTEM_RULES[sequence]
     return sequence
 
 
-def draw_l_system(turtle, rules, seg_length, angle):
+def draw_l_system(turtle, SYSTEM_RULES, seg_length, angle):
     stack = []
-    for command in rules:
+    for command in SYSTEM_RULES:
         turtle.pd()
         if command in ["F", "G", "R", "L"]:
             turtle.forward(seg_length)
@@ -55,7 +55,7 @@ def main():
         if rule == '0':
             break
         key, value = rule.split("->")
-        rules[key] = value
+        SYSTEM_RULES[key] = value
         rule_num += 1
 
     axiom = input("Enter axiom (w): ")
