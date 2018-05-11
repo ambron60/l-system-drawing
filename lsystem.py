@@ -1,6 +1,6 @@
 import turtle
 
-SYSTEM_RULES = {}  # generator system rules
+SYSTEM_RULES = {}  # generator system rules for l-system
 
 
 def derivation(axiom, steps):
