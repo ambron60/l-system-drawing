@@ -28,9 +28,9 @@ Following the same rewriting rules, this project is capable of creating [[Fracta
 
 ## Usage
 
-Here's an example of a plant-like generated L-system using the bracketed sequence F->F[+F]F[-F]F. The rest of the parameters, such as the number of iterations (n), is shown in the below screengrab.
+Here's an example of a plant-like generated L-system (Axial Tree) using the bracketed sequence X->F-[[X]+X]+F[+FX]-X F->FF. The rest of the parameters, such as the number of iterations (n), is described below.
 
-![Alt Text](https://media.giphy.com/media/443krfSzd7qRq6Q8pb/giphy.gif)
+![Alt Text](https://gifyu.com/image/nAC8)
 
 For example, to create a [Dragon Curve](http://mathworld.wolfram.com/DragonCurve.html) enter the following:
 
