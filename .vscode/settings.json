@@ -8,6 +8,7 @@
     ],
     "python.testing.pytestEnabled": false,
     "python.testing.nosetestsEnabled": false,
-    "python.testing.unittestEnabled": true,
-    "python.pythonPath": "/home/gianni/miniconda3/envs/lsystem/bin/python"
+    "python.testing.unittestEnabled": false,
+    "python.pythonPath": "/home/gianni/miniconda3/envs/lsystem/bin/python",
+    "python.testing.promptToConfigure": false
 }
