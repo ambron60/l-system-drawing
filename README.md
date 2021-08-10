@@ -76,8 +76,8 @@ Enter angle increment (i): 60
 
 For questions or comments:
 
-- Author: **Gianni Perez** @ [skylabus.com](https://www.skylabus.com) or at gianni.perez@us.ibm.com
-- [![](http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png)](http://uk.linkedin.com/in/gianni-perez)
+- Author: **Gianni Perez** @ [skylabus.com](https://www.skylabus.com) or at gianni.perez@gmail.com
+- [![](http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png)](http://www.linkedin.com/gianni-perez)
 
 
 ## License
