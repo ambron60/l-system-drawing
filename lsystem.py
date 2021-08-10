@@ -1,3 +1,4 @@
+import sys
 import turtle
 
 SYSTEM_RULES = {}  # generator system rules for l-system
@@ -76,4 +77,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except BaseException:
+        sys.exit(0)
