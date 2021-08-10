@@ -1,4 +1,4 @@
-<img src="/venv/tree.png" alt="">
+<img src="/https://upload.wikimedia.org/wikipedia/commons/a/a9/Fractal_tree.gif" alt="">
 
 # L-System Graphical Modeling
 
