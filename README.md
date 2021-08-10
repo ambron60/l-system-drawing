@@ -1,4 +1,4 @@
-<img src="http://www.sidefx.com/docs/houdini/nodes/images/lsystems/roll5.png" alt="">
+<img src="/venv/tree.png" alt="">
 
 # L-System Graphical Modeling
 
