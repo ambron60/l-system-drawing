@@ -58,6 +58,9 @@ Cuadratic Snowflake | F->F+F-F-F+F w=-F n=4 alpha0=90 angle(i)=90
 Hexagonal Gosper curve | L->L+R++R-L--LL-R+ R->-L+RR++R+L--L-R w=L n=4 alpha0=60 angle(i)=60
 Axial Tree (node-rewriting) | X->F-[[X]+X]+F[+FX]-X F->FF w=X n=5 alpha0=90 angle(i)=22.5
 
+
+For example, to create a [Sierpiński Triangle](https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle) enter the following:
+
 ```
 Enter rule[1]:rewrite term (0 when done): L->R-L-R
 Enter rule[2]:rewrite term (0 when done): R->L+R+L
