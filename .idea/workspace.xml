@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f456a55a-f56e-4856-89ce-a0a83858461e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/l-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/l-system.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lsystem.py" beforeDir="false" afterPath="$PROJECT_DIR$/lsystem.py" afterDir="false" />
     </list>
@@ -126,15 +122,28 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590885176690</updated>
-      <workItem from="1729906220926" duration="1462000" />
+      <workItem from="1729906220926" duration="2043000" />
     </task>
+    <task id="LOCAL-00001" summary="upgrade lsystem.py from turtles to matplolib viz">
+      <option name="closed" value="true" />
+      <created>1729907810334</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729907810334</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="upgrade lsystem.py from turtles to matplolib viz" />
+    <option name="LAST_COMMIT_MESSAGE" value="upgrade lsystem.py from turtles to matplolib viz" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/l_system_drawing$app.coverage" NAME="app Coverage Results" MODIFIED="1729906949759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/l_system_drawing$lsystem.coverage" NAME="lsystem Coverage Results" MODIFIED="1729907600428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/l_system_drawing$lsystem.coverage" NAME="lsystem Coverage Results" MODIFIED="1729907694674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -1,13 +1,13 @@
+import keyboard
 import sys
 import math
+import threading
 import matplotlib.pyplot as plt
 
-# Global dictionary to store L-System rules
 SYSTEM_RULES = {}
 
 
 def get_system_rules():
-    """Collects user input rules for the L-System."""
     rule_num = 1
     while True:
         rule = input(f"Enter rule[{rule_num}]: rewrite term (0 when done): ")
@@ -23,7 +23,6 @@ def get_system_rules():
 
 
 def derivation(axiom, steps):
-    """Generates an L-System sequence for a given axiom and number of steps."""
     derived = axiom
     for _ in range(steps):
         derived = ''.join(SYSTEM_RULES.get(char, char) for char in derived)
@@ -31,33 +30,20 @@ def derivation(axiom, steps):
 
 
 def generate_coordinates(sequence, seg_length, initial_heading, angle_increment):
-    """
-    Generates a list of coordinates based on the L-System sequence.
-
-    Parameters:
-        sequence (str): The L-System sequence to interpret.
-        seg_length (float): The length of each forward step.
-        initial_heading (float): The initial direction of drawing in degrees.
-        angle_increment (float): The angle increment for each rotation command.
-
-    Returns:
-        list of tuples: Each tuple contains (x, y) coordinates for plotting.
-    """
-    x, y = 0, 0  # Starting position
-    heading = initial_heading  # Start with the initial heading
+    x, y = 0, 0
+    heading = initial_heading
     coordinates = [(x, y)]
     stack = []
 
     for command in sequence:
         if command in "FGRL":
-            # Move forward in the current direction
             x += seg_length * math.cos(math.radians(heading))
             y += seg_length * math.sin(math.radians(heading))
             coordinates.append((x, y))
         elif command == "+":
-            heading -= angle_increment  # Rotate clockwise
+            heading -= angle_increment
         elif command == "-":
-            heading += angle_increment  # Rotate counterclockwise
+            heading += angle_increment
         elif command == "[":
             stack.append((x, y, heading))
         elif command == "]":
@@ -76,8 +62,21 @@ def plot_l_system(coordinates):
     plt.show()
 
 
+def plot_in_thread(coordinates):
+    """Plots in a separate thread and listens for 'q' to quit."""
+    # Start the plotting in a separate thread
+    plotting_thread = threading.Thread(target=plot_l_system, args=(coordinates,))
+    plotting_thread.start()
+
+    # Check for 'q' keypress to quit
+    while plotting_thread.is_alive():
+        if keyboard.is_pressed('q'):
+            print("Quitting drawing...")
+            plt.close('all')  # Closes all matplotlib figures
+            break
+
+
 def main():
-    # Collect system rules and parameters
     get_system_rules()
     axiom = input("Enter axiom (starting sequence): ")
     iterations = int(input("Enter number of iterations: "))
@@ -87,12 +86,10 @@ def main():
 
     # Generate L-System sequence
     final_sequence = derivation(axiom, iterations)
-
-    # Generate coordinates for plotting with both heading and angle
     coordinates = generate_coordinates(final_sequence, segment_length, initial_heading, angle_increment)
 
-    # Plot the L-System
-    plot_l_system(coordinates)
+    # Start plotting with 'q' to quit functionality
+    plot_in_thread(coordinates)
 
 
 if __name__ == "__main__":
