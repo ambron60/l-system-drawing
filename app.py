@@ -9,7 +9,7 @@ st.write(
 
 # Sidebar Inputs for L-System Parameters
 st.sidebar.header("L-System Parameters")
-axiom = st.sidebar.text_input("Axiom (Starting Sequence)", "F-F-F-F")
+axiom = st.sidebar.text_input("Axiom (Starting Sequence)", "F-F-F")
 rules_input = st.sidebar.text_area("Rules (e.g., F -> F+F-F-F+F)", "F -> F-G+F+G-F\nG -> GG")
 iterations = st.sidebar.slider("Iterations", min_value=1, max_value=10, value=5)
 initial_heading = st.sidebar.number_input("Initial Heading (degrees)", min_value=0, max_value=360, value=0)
