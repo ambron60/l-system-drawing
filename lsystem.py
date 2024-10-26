@@ -1,83 +1,103 @@
 import sys
-import turtle
+import math
+import matplotlib.pyplot as plt
 
-SYSTEM_RULES = {}  # generator system rules for l-system
+# Global dictionary to store L-System rules
+SYSTEM_RULES = {}
+
+
+def get_system_rules():
+    """Collects user input rules for the L-System."""
+    rule_num = 1
+    while True:
+        rule = input(f"Enter rule[{rule_num}]: rewrite term (0 when done): ")
+        if rule == '0':
+            break
+        try:
+            key, value = map(str.strip, rule.split("->"))
+            SYSTEM_RULES[key] = value
+            rule_num += 1
+        except ValueError:
+            print("Invalid format. Use `symbol->replacement` format.")
+    return SYSTEM_RULES
 
 
 def derivation(axiom, steps):
-    derived = [axiom]  # seed
+    """Generates an L-System sequence for a given axiom and number of steps."""
+    derived = axiom
     for _ in range(steps):
-        next_seq = derived[-1]
-        next_axiom = [rule(char) for char in next_seq]
-        derived.append(''.join(next_axiom))
+        derived = ''.join(SYSTEM_RULES.get(char, char) for char in derived)
     return derived
 
 
-def rule(sequence):
-    if sequence in SYSTEM_RULES:
-        return SYSTEM_RULES[sequence]
-    return sequence
+def generate_coordinates(sequence, seg_length, initial_heading, angle_increment):
+    """
+    Generates a list of coordinates based on the L-System sequence.
 
+    Parameters:
+        sequence (str): The L-System sequence to interpret.
+        seg_length (float): The length of each forward step.
+        initial_heading (float): The initial direction of drawing in degrees.
+        angle_increment (float): The angle increment for each rotation command.
 
-def draw_l_system(turtle, SYSTEM_RULES, seg_length, angle):
+    Returns:
+        list of tuples: Each tuple contains (x, y) coordinates for plotting.
+    """
+    x, y = 0, 0  # Starting position
+    heading = initial_heading  # Start with the initial heading
+    coordinates = [(x, y)]
     stack = []
-    for command in SYSTEM_RULES:
-        turtle.pd()
-        if command in ["F", "G", "R", "L"]:
-            turtle.forward(seg_length)
-        elif command == "f":
-            turtle.pu()  # pen up - not drawing
-            turtle.forward(seg_length)
+
+    for command in sequence:
+        if command in "FGRL":
+            # Move forward in the current direction
+            x += seg_length * math.cos(math.radians(heading))
+            y += seg_length * math.sin(math.radians(heading))
+            coordinates.append((x, y))
         elif command == "+":
-            turtle.right(angle)
+            heading -= angle_increment  # Rotate clockwise
         elif command == "-":
-            turtle.left(angle)
+            heading += angle_increment  # Rotate counterclockwise
         elif command == "[":
-            stack.append((turtle.position(), turtle.heading()))
+            stack.append((x, y, heading))
         elif command == "]":
-            turtle.pu()  # pen up - not drawing
-            position, heading = stack.pop()
-            turtle.goto(position)
-            turtle.setheading(heading)
+            x, y, heading = stack.pop()
+            coordinates.append((x, y))
+
+    return coordinates
 
 
-def set_turtle(alpha_zero):
-    r_turtle = turtle.Turtle()  # recursive turtle
-    r_turtle.screen.title("L-System Derivation")
-    r_turtle.speed(0)  # adjust as needed (0 = fastest)
-    r_turtle.setheading(alpha_zero)  # initial heading
-    return r_turtle
+def plot_l_system(coordinates):
+    """Plots the L-System based on generated coordinates."""
+    plt.figure(figsize=(8, 8))
+    plt.plot(*zip(*coordinates), lw=0.5)
+    plt.axis("equal")
+    plt.axis("off")
+    plt.show()
 
 
 def main():
-    rule_num = 1
-    while True:
-        rule = input("Enter rule[%d]:rewrite term (0 when done): " % rule_num)
-        if rule == '0':
-            break
-        key, value = rule.split("->")
-        SYSTEM_RULES[key] = value
-        rule_num += 1
+    # Collect system rules and parameters
+    get_system_rules()
+    axiom = input("Enter axiom (starting sequence): ")
+    iterations = int(input("Enter number of iterations: "))
+    segment_length = int(input("Enter segment length: "))
+    initial_heading = float(input("Enter initial heading (alpha-0): "))
+    angle_increment = float(input("Enter angle increment: "))
 
-    axiom = input("Enter axiom (w): ")
-    iterations = int(input("Enter number of iterations (n): "))
+    # Generate L-System sequence
+    final_sequence = derivation(axiom, iterations)
 
-    model = derivation(axiom, iterations)  # axiom (initial string), nth iterations
+    # Generate coordinates for plotting with both heading and angle
+    coordinates = generate_coordinates(final_sequence, segment_length, initial_heading, angle_increment)
 
-    segment_length = int(input("Enter step size (segment length): "))
-    alpha_zero = float(input("Enter initial heading (alpha-0): "))
-    angle = float(input("Enter angle increment (i): "))
-
-    # Set turtle parameters and draw L-System
-    r_turtle = set_turtle(alpha_zero)  # create turtle object
-    turtle_screen = turtle.Screen()  # create graphics window
-    turtle_screen.screensize(1500, 1500)
-    draw_l_system(r_turtle, model[-1], segment_length, angle)  # draw model
-    turtle_screen.exitonclick()
+    # Plot the L-System
+    plot_l_system(coordinates)
 
 
 if __name__ == "__main__":
     try:
         main()
-    except BaseException:
+    except Exception as e:
+        print("Error:", e)
         sys.exit(0)
