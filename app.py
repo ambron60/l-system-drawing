@@ -48,7 +48,7 @@ if complexity > 500:
 # Plotting function with unique variable names
 def plot_l_system(plot_coordinates):
     plot_figure, plot_axis = plt.subplots(figsize=(3.5, 3.5))  # Standard size; scaling is managed by Streamlit width control
-    plot_axis.plot(*zip(*plot_coordinates), lw=0.3, color="gray")
+    plot_axis.plot(*zip(*plot_coordinates), lw=0.3, color="blue")
     plot_axis.axis("equal")
     plot_axis.axis("off")
     return plot_figure
