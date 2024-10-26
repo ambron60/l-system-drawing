@@ -61,14 +61,14 @@ Enter angle: 90
 
 ## Axial Trees and Curves
 
- Figure                      | Derivation                                                                          
+| Figure                      | Derivation                                                                          |
 |-----------------------------|-------------------------------------------------------------------------------------|
- Koch Island                 | F->F-F+F+FF-F-F+F w=F-F-F-F n=2 alpha0=90 angle(i)=90                               
- Koch (1st variation)        | F->FF-F-F-F-F-F+F w=F-F-F-F n=3 alpha0=90 angle(i)=90                               
- Koch Islands and Lakes      | F->F+f-FF+F+FF+Ff+FF-f+FF-F-FF-Ff-FFF f->ffffff w=F+F+F+F n=2 alpha0=90 angle(i)=90 
- Cuadratic Snowflake         | F->F+F-F-F+F w=-F n=4 alpha0=90 angle(i)=90                                         
- Hexagonal Gosper curve      | L->L+R++R-L--LL-R+ R->-L+RR++R+L--L-R w=L n=4 alpha0=60 angle(i)=60                 
- Axial Tree (node-rewriting) | X->F-[[X]+X]+F[+FX]-X F->FF w=X n=5 alpha0=90 angle(i)=22.5                         
+| Koch Island                 | F->F-F+F+FF-F-F+F w=F-F-F-F n=2 alpha0=90 angle(i)=90                               |
+| Koch (1st variation)        | F->FF-F-F-F-F-F+F w=F-F-F-F n=3 alpha0=90 angle(i)=90                               |
+| Koch Islands and Lakes      | F->F+f-FF+F+FF+Ff+FF-f+FF-F-FF-Ff-FFF f->ffffff w=F+F+F+F n=2 alpha0=90 angle(i)=90 |
+| Cuadratic Snowflake         | F->F+F-F-F+F w=-F n=4 alpha0=90 angle(i)=90                                         |
+| Hexagonal Gosper curve      | L->L+R++R-L--LL-R+ R->-L+RR++R+L--L-R w=L n=4 alpha0=60 angle(i)=60                 |
+| Axial Tree (node-rewriting) | X->F-[[X]+X]+F[+FX]-X F->FF w=X n=5 alpha0=90 angle(i)=22.5                         |
 
 For example, to create a [Sierpiński Triangle](https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle) enter the
 following:

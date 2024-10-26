@@ -22,22 +22,20 @@ for line in rules_input.splitlines():
         key, value = map(str.strip, line.split("->"))
         SYSTEM_RULES[key] = value
 
-
-# Plotting function
-def plot_l_system(coordinates):
-    fig, ax = plt.subplots(figsize=(3.5, 3.5))  # Standard size; scaling is managed by Streamlit width control
-    ax.plot(*zip(*coordinates), lw=0.3, color="gray")
-    ax.axis("equal")
-    ax.axis("off")
-    return fig
-
+# Plotting function with unique variable names
+def plot_l_system(plot_coordinates):
+    plot_figure, plot_axis = plt.subplots(figsize=(3.5, 3.5))  # Standard size; scaling is managed by Streamlit width control
+    plot_axis.plot(*zip(*plot_coordinates), lw=0.3, color="gray")
+    plot_axis.axis("equal")
+    plot_axis.axis("off")
+    return plot_figure
 
 # Generate and display the L-System fractal
 if st.sidebar.button("Generate L-System"):
-    l_system_sequence = derivation(axiom, iterations)
-    coordinates = generate_coordinates(l_system_sequence, 1, initial_heading, angle_increment)
-    fig = plot_l_system(coordinates)
-    st.pyplot(fig, use_container_width=False)
+    generated_sequence = derivation(axiom, iterations)
+    generated_coordinates = generate_coordinates(generated_sequence, 1, initial_heading, angle_increment)
+    fractal_figure = plot_l_system(generated_coordinates)
+    st.pyplot(fractal_figure, use_container_width=False)
 
 # Footer in Sidebar with smaller GitHub link
 st.sidebar.markdown("""

@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f456a55a-f56e-4856-89ce-a0a83858461e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +122,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590885176690</updated>
-      <workItem from="1729906220926" duration="5925000" />
+      <workItem from="1729906220926" duration="6146000" />
     </task>
     <task id="LOCAL-00001" summary="upgrade lsystem.py from turtles to matplolib viz">
       <option name="closed" value="true" />
@@ -178,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729912079802</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="incremental changes">
+      <option name="closed" value="true" />
+      <created>1729912171591</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1729912171591</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,7 +197,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="upgrade lsystem.py from turtles to matplolib viz" />
     <MESSAGE value="minor updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor updates" />
+    <MESSAGE value="incremental changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="incremental changes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/l_system_drawing$app.coverage" NAME="app Coverage Results" MODIFIED="1729908882294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
