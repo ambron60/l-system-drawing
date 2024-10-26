@@ -43,7 +43,6 @@ Here's an example of a plant-like generated L-system (Axial Tree) using the brac
 FF. The rest of the parameters, such as the number of iterations (n), is described below.
 
 ![Axial Tree](https://s7.gifyu.com/images/ezgif.com-cropcc2d2a5cd782a90b.gif)
-
 For example, to create a [Dragon Curve](http://mathworld.wolfram.com/DragonCurve.html) enter the following:
 
 ```
