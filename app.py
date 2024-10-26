@@ -24,7 +24,7 @@ for line in rules_input.splitlines():
         SYSTEM_RULES[key] = value
 
 # Function to safely run derivation with timeout
-def safe_derivation(start_axiom, steps, timeout=10):
+def safe_derivation(start_axiom, steps, timeout=5):
     with concurrent.futures.ThreadPoolExecutor() as executor:
         future = executor.submit(derivation, start_axiom, steps)
         try:
