@@ -1,6 +1,6 @@
 import streamlit as st
 import matplotlib.pyplot as plt
-from lsystem import derivation, generate_coordinates, SYSTEM_RULES
+from lsystem import derivation, SYSTEM_RULES
 import concurrent.futures
 
 # Title and Description
@@ -23,6 +23,7 @@ for line in rules_input.splitlines():
         key, value = map(str.strip, line.split("->"))
         SYSTEM_RULES[key] = value
 
+
 # Function to safely run derivation with timeout
 def safe_derivation(start_axiom, steps, timeout=10):
     with concurrent.futures.ThreadPoolExecutor() as executor:
@@ -33,6 +34,7 @@ def safe_derivation(start_axiom, steps, timeout=10):
             st.warning("Generation took too long and was stopped. Try reducing iterations or simplifying the rules.")
             return None
 
+
 # Function to estimate complexity based on initial iterations
 def estimate_complexity(start_axiom, rules, estimate_iters=3):
     derived = start_axiom
@@ -40,27 +42,22 @@ def estimate_complexity(start_axiom, rules, estimate_iters=3):
         derived = ''.join(rules.get(char, char) for char in derived)
     return len(derived)
 
+
 # Display complexity estimation warning if necessary
 complexity = estimate_complexity(axiom_input, SYSTEM_RULES, 3)
 if complexity > 500:
     st.warning("High complexity detected. Consider reducing iterations or simplifying the axiom/rules.")
 
+
 # Plotting function with unique variable names
 def plot_l_system(plot_coordinates):
-    plot_figure, plot_axis = plt.subplots(figsize=(3.5, 3.5))  # Standard size; scaling is managed by Streamlit width control
+    plot_figure, plot_axis = plt.subplots(
+        figsize=(3.5, 3.5))  # Standard size; scaling is managed by Streamlit width control
     plot_axis.plot(*zip(*plot_coordinates), lw=0.3, color="blue")
     plot_axis.axis("equal")
     plot_axis.axis("off")
     return plot_figure
 
-# Conditional confirmation button for high iterations
-generate_confirm = True if iterations <= 5 else st.sidebar.button("Confirm High Iteration Count")
-if generate_confirm and st.sidebar.button("Generate L-System"):
-    l_system_sequence = safe_derivation(axiom_input, iterations)
-    if l_system_sequence:
-        coordinates = generate_coordinates(l_system_sequence, 1, initial_heading, angle_increment)
-        fig = plot_l_system(coordinates)
-        st.pyplot(fig, use_container_width=False)
 
 # Footer in Sidebar with smaller GitHub link
 st.sidebar.markdown("""
