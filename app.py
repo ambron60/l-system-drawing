@@ -11,7 +11,7 @@ st.write(
 st.sidebar.header("L-System Parameters")
 axiom = st.sidebar.text_input("Axiom (Starting Sequence)", "F+XF+F+XF")
 rules_input = st.sidebar.text_area("Rules (e.g., F -> F+F-F-F+F)", "X -> XF-F+F-XF+F+XF-F+F-X")
-iterations = st.sidebar.slider("Iterations", min_value=1, max_value=10, value=5)
+iterations = st.sidebar.slider("Iterations", min_value=1, max_value=10, value=4)
 initial_heading = st.sidebar.number_input("Initial Heading (degrees)", min_value=0, max_value=360, value=0)
 angle_increment = st.sidebar.number_input("Angle Increment", min_value=0, max_value=360, value=90)
 
