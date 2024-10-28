@@ -106,6 +106,7 @@ if st.sidebar.button("Generate L-System"):
         st.pyplot(l_system_figure, use_container_width=False)
 
 # Footer in Sidebar with smaller GitHub link
-st.sidebar.markdown("""<p>
-See my original Python code on GitHub: [LINK](https://github.com/ambron60/l-system-drawing)</p>
+st.sidebar.markdown("""
+
+See my original Python code on GitHub: [LINK](https://github.com/ambron60/l-system-drawing)
 """, unsafe_allow_html=True)
