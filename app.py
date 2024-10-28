@@ -3,13 +3,19 @@ import matplotlib.pyplot as plt
 from lsystem import derivation, generate_coordinates, SYSTEM_RULES
 import concurrent.futures
 
-# Add CSS to adjust sidebar margin
+# Inject CSS to adjust the sidebar padding
 st.markdown(
     """
     <style>
-        /* Remove the extra space at the top of the sidebar */
-        .css-1d391kg {
-            padding-top: -10 !important;
+        /* Adjust padding for the main block in the sidebar */
+        .css-1d391kg {  /* This class may change; inspect with browser dev tools if needed */
+            padding-top: 0rem !important;
+            padding-bottom: 1rem !important;
+        }
+        /* Optional: Fine-tune the sidebar header font size to make it more compact */
+        .css-1v3fvcr {
+            font-size: 1.2em !important;
+            margin-bottom: 0.5rem !important;
         }
     </style>
     """,
