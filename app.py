@@ -9,9 +9,8 @@ st.write(
     "Create fractal patterns using Lindenmayer Systems (L-Systems). Adjust the parameters in the sidebar and generate your custom fractal pattern.")
 
 # Sidebar Inputs for L-System Parameters
-st.sidebar.header("L-System Parameters")
 
-# State variables to manage input fields and reset on "Clear All"
+# Initialize session state for each input field if not already set
 if 'axiom' not in st.session_state:
     st.session_state['axiom'] = "F-F-F-F"
 if 'rules' not in st.session_state:
@@ -30,13 +29,13 @@ iterations = st.sidebar.slider("Iterations", min_value=1, max_value=10, value=st
 initial_heading = st.sidebar.number_input("Initial Heading (degrees)", min_value=0, max_value=360, value=st.session_state['initial_heading'], key='initial_heading')
 angle_increment = st.sidebar.number_input("Angle Increment", min_value=0, max_value=360, value=st.session_state['angle_increment'], key='angle_increment')
 
-# Clear All button resets all fields to their default values
+# Clear All button sets all fields to blank or zero
 if st.sidebar.button("Clear All Fields"):
-    st.session_state['axiom'] = "F-F-F-F"
-    st.session_state['rules'] = "F -> F-G+F+G-F\nG -> GG"
-    st.session_state['iterations'] = 5
+    st.session_state['axiom'] = ""
+    st.session_state['rules'] = ""
+    st.session_state['iterations'] = 1
     st.session_state['initial_heading'] = 0
-    st.session_state['angle_increment'] = 120
+    st.session_state['angle_increment'] = 0
 
 # Process rules input into SYSTEM_RULES
 SYSTEM_RULES.clear()
