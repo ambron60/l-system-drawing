@@ -9,33 +9,12 @@ st.write(
     "Create fractal patterns using Lindenmayer Systems (L-Systems). Adjust the parameters in the sidebar and generate your custom fractal pattern.")
 
 # Sidebar Inputs for L-System Parameters
-
-# Initialize session state for each input field if not already set
-if 'axiom' not in st.session_state:
-    st.session_state['axiom'] = "F-F-F-F"
-if 'rules' not in st.session_state:
-    st.session_state['rules'] = "F -> F-G+F+G-F\nG -> GG"
-if 'iterations' not in st.session_state:
-    st.session_state['iterations'] = 5
-if 'initial_heading' not in st.session_state:
-    st.session_state['initial_heading'] = 0
-if 'angle_increment' not in st.session_state:
-    st.session_state['angle_increment'] = 120
-
-# Sidebar inputs, linked to session state for reset capability
-axiom_input = st.sidebar.text_input("Axiom (Starting Sequence)", st.session_state['axiom'], key='axiom')
-rules_input = st.sidebar.text_area("Rules (e.g., F -> F+F-F-F+F)", st.session_state['rules'], key='rules')
-iterations = st.sidebar.slider("Iterations", min_value=1, max_value=10, value=st.session_state['iterations'], key='iterations')
-initial_heading = st.sidebar.number_input("Initial Heading (degrees)", min_value=0, max_value=360, value=st.session_state['initial_heading'], key='initial_heading')
-angle_increment = st.sidebar.number_input("Angle Increment", min_value=0, max_value=360, value=st.session_state['angle_increment'], key='angle_increment')
-
-# Clear All button sets fields to neutral values
-if st.sidebar.button("Clear All Fields"):
-    st.session_state['axiom'] = ""  # Empty string for text fields
-    st.session_state['rules'] = ""
-    st.session_state['iterations'] = 1  # Minimum slider value for stability
-    st.session_state['initial_heading'] = 0  # Neutral direction for heading
-    st.session_state['angle_increment'] = 0  # Neutral angle increment
+st.sidebar.header("L-System Parameters")
+axiom_input = st.sidebar.text_input("Axiom (Starting Sequence)", "F-F-F-F")
+rules_input = st.sidebar.text_area("Rules (e.g., F -> F+F-F-F+F)", "F -> F-G+F+G-F\nG -> GG")
+iterations = st.sidebar.slider("Iterations", min_value=1, max_value=10, value=5)
+initial_heading = st.sidebar.number_input("Initial Heading (degrees)", min_value=0, max_value=360, value=0)
+angle_increment = st.sidebar.number_input("Angle Increment", min_value=0, max_value=360, value=120)
 
 # Process rules input into SYSTEM_RULES
 SYSTEM_RULES.clear()
