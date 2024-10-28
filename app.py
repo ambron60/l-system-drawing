@@ -71,7 +71,7 @@ total_complexity, avg_complexity, individual_complexities = calculate_rule_compl
 st.sidebar.subheader("Rule Complexity Metrics")
 st.sidebar.markdown(f"""
 Total Complexity: {total_complexity:.2f}  
-###Average Complexity:### {avg_complexity:.2f}  
+Average Complexity: {avg_complexity:.2f}  
 Individual Rule Complexities:  
 {chr(10).join(f'{var}: {comp:.2f}' for var, comp in individual_complexities.items())}
 """)
