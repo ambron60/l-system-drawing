@@ -4,7 +4,7 @@ from lsystem import derivation, generate_coordinates, SYSTEM_RULES
 import concurrent.futures
 
 # Title and Description
-st.title("L-System Fractal Generator")
+st.title("2D L-System Fractal Generator")
 st.write(
     "Create fractal patterns using Lindenmayer Systems (L-Systems). Adjust the parameters in the sidebar to generate your custom fractal pattern.")
 
