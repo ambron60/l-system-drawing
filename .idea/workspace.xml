@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f456a55a-f56e-4856-89ce-a0a83858461e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +122,7 @@
       <option name="presentableId" value="Default" />
       <updated>1590885176690</updated>
       <workItem from="1729906220926" duration="10733000" />
-      <workItem from="1730127616095" duration="2994000" />
+      <workItem from="1730127616095" duration="3401000" />
     </task>
     <task id="LOCAL-00001" summary="upgrade lsystem.py from turtles to matplolib viz">
       <option name="closed" value="true" />
@@ -387,7 +388,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730130462864</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="incremental changes">
+      <option name="closed" value="true" />
+      <created>1730130620936</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1730130620936</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -23,10 +23,12 @@ for line in rules_input.splitlines():
         key, value = map(str.strip, line.split("->"))
         SYSTEM_RULES[key] = value
 
-def calculate_rule_complexity(rules_data):
+
+def calculate_rule_complexity(rules_data, num_iterations=1):
     """
-    Calculate complexity metrics for L-system rules
+    Calculate complexity metrics for L-system rules, accounting for iterations
     """
+
     def single_rule_complexity(rule_text):
         length = len(rule_text)
         unique_symbols = len(set(rule_text))
@@ -42,15 +44,16 @@ def calculate_rule_complexity(rules_data):
             'variable': 1.5
         }
 
-        complexity_score = (
-            length * weights['length'] +
-            unique_symbols * weights['unique'] +
-            rotations * weights['rotation'] +
-            branches * weights['branch'] +
-            variables * weights['variable']
+        base_complexity = (
+                length * weights['length'] +
+                unique_symbols * weights['unique'] +
+                rotations * weights['rotation'] +
+                branches * weights['branch'] +
+                variables * weights['variable']
         )
 
-        return complexity_score
+        # Apply iteration factor - complexity grows exponentially with iterations
+        return base_complexity * (1.5 ** num_iterations)
 
     # Calculate individual rule complexities
     individual_complexities = {var: single_rule_complexity(rule) for var, rule in rules_data.items()}
@@ -59,8 +62,9 @@ def calculate_rule_complexity(rules_data):
 
     return total_complexity, avg_complexity, individual_complexities
 
+
 # Display rule complexity in real-time
-total_complexity, avg_complexity, individual_complexities = calculate_rule_complexity(SYSTEM_RULES)
+total_complexity, avg_complexity, individual_complexities = calculate_rule_complexity(SYSTEM_RULES, iterations)
 st.sidebar.subheader("Rule Complexity Metrics")
 st.sidebar.markdown(f"""
 Total Complexity: {total_complexity:.2f}  
@@ -68,6 +72,7 @@ Average Complexity: {avg_complexity:.2f}
 Individual Rule Complexities:  
 {chr(10).join(f'{var}: {comp:.2f}' for var, comp in individual_complexities.items())}
 """)
+
 
 # Function to safely run derivation with timeout
 def safe_derivation(start_axiom, steps, timeout=5):
@@ -79,6 +84,7 @@ def safe_derivation(start_axiom, steps, timeout=5):
             st.warning("Generation took too long and was stopped. Try reducing iterations or simplifying the rules.")
             return None
 
+
 # Plotting function
 def plot_l_system(plot_coordinates):
     figure, axis = plt.subplots(figsize=(3.5, 3.5))
@@ -86,6 +92,7 @@ def plot_l_system(plot_coordinates):
     axis.axis("equal")
     axis.axis("off")
     return figure
+
 
 # Generate and display the L-System fractal
 if st.sidebar.button("Generate L-System"):
