@@ -62,11 +62,12 @@ def calculate_rule_complexity(rules_data):
 # Display rule complexity in real-time
 total_complexity, avg_complexity, individual_complexities = calculate_rule_complexity(SYSTEM_RULES)
 st.sidebar.subheader("Rule Complexity Metrics")
-st.sidebar.write(f"Total Complexity: {total_complexity:.2f}")
-st.sidebar.write(f"Average Complexity: {avg_complexity:.2f}")
-st.sidebar.write("Individual Rule Complexities:")
-for var, complexity in individual_complexities.items():
-    st.sidebar.write(f"{var}: {complexity:.2f}")
+st.sidebar.markdown(f"""
+Total Complexity: {total_complexity:.2f}  
+Average Complexity: {avg_complexity:.2f}  
+Individual Rule Complexities:  
+{chr(10).join(f'{var}: {comp:.2f}' for var, comp in individual_complexities.items())}
+""")
 
 # Function to safely run derivation with timeout
 def safe_derivation(start_axiom, steps, timeout=5):
