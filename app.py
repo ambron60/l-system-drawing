@@ -9,7 +9,7 @@ st.markdown(
     <style>
         /* Remove the extra space at the top of the sidebar */
         .css-1d391kg {
-            padding-top: 0 !important;
+            padding-top: -10 !important;
         }
     </style>
     """,
