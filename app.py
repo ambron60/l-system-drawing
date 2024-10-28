@@ -29,13 +29,13 @@ iterations = st.sidebar.slider("Iterations", min_value=1, max_value=10, value=st
 initial_heading = st.sidebar.number_input("Initial Heading (degrees)", min_value=0, max_value=360, value=st.session_state['initial_heading'], key='initial_heading')
 angle_increment = st.sidebar.number_input("Angle Increment", min_value=0, max_value=360, value=st.session_state['angle_increment'], key='angle_increment')
 
-# Clear All button sets all fields to blank or zero
+# Clear All button sets fields to neutral values
 if st.sidebar.button("Clear All Fields"):
-    st.session_state['axiom'] = ""
+    st.session_state['axiom'] = ""  # Empty string for text fields
     st.session_state['rules'] = ""
-    st.session_state['iterations'] = 1
-    st.session_state['initial_heading'] = 0
-    st.session_state['angle_increment'] = 0
+    st.session_state['iterations'] = 1  # Minimum slider value for stability
+    st.session_state['initial_heading'] = 0  # Neutral direction for heading
+    st.session_state['angle_increment'] = 0  # Neutral angle increment
 
 # Process rules input into SYSTEM_RULES
 SYSTEM_RULES.clear()
