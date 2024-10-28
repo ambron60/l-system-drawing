@@ -24,9 +24,9 @@ for line in rules_input.splitlines():
         SYSTEM_RULES[key] = value
 
 
-def calculate_rule_complexity(rules_data, num_iterations=1):
+def calculate_rule_complexity(rules_data, num_iterations=1, angle_increment=0):
     """
-    Calculate complexity metrics for L-system rules with more reasonable scaling
+    Calculate complexity metrics for L-system rules, including angle_increment.
     """
 
     def single_rule_complexity(rule_text):
@@ -41,7 +41,8 @@ def calculate_rule_complexity(rules_data, num_iterations=1):
             'unique': 1.0,  # Reduced from 1.5
             'rotation': 1.5,  # Reduced from 2.0
             'branch': 2.0,  # Reduced from 3.0
-            'variable': 1.0  # Reduced from 1.5
+            'variable': 1.0,  # Reduced from 1.5
+            'angle': 0.02  # Weight for angle increment
         }
 
         base_complexity = (
@@ -49,11 +50,11 @@ def calculate_rule_complexity(rules_data, num_iterations=1):
                 unique_symbols * weights['unique'] +
                 rotations * weights['rotation'] +
                 branches * weights['branch'] +
-                variables * weights['variable']
+                variables * weights['variable'] +
+                angle_increment * weights['angle']  # Added angle factor
         )
 
         # More conservative iteration scaling
-        # Using log base 2 of iterations plus 1 as a multiplier
         iteration_factor = 1 + (num_iterations * 0.5)
         return base_complexity * iteration_factor
 
@@ -65,7 +66,8 @@ def calculate_rule_complexity(rules_data, num_iterations=1):
 
 
 # Display rule complexity in real-time
-total_complexity, avg_complexity, individual_complexities = calculate_rule_complexity(SYSTEM_RULES, iterations)
+total_complexity, avg_complexity, individual_complexities = calculate_rule_complexity(SYSTEM_RULES, iterations,
+                                                                                      angle_increment)
 st.sidebar.subheader("Rule Complexity Metrics")
 st.sidebar.markdown(f"""
 Total Complexity: {total_complexity:.2f}  
@@ -105,6 +107,7 @@ if st.sidebar.button("Generate L-System"):
 
 # Footer in Sidebar with smaller GitHub link
 st.sidebar.markdown("""
+---
 #### See my original Python code on GitHub:  
 [ambron60/l-system-drawing](https://github.com/ambron60/l-system-drawing)
 """, unsafe_allow_html=True)
