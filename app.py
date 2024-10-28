@@ -26,7 +26,7 @@ for line in rules_input.splitlines():
 
 def calculate_rule_complexity(rules_data, num_iterations=1):
     """
-    Calculate complexity metrics for L-system rules, accounting for iterations
+    Calculate complexity metrics for L-system rules with more reasonable scaling
     """
 
     def single_rule_complexity(rule_text):
@@ -37,11 +37,11 @@ def calculate_rule_complexity(rules_data, num_iterations=1):
         variables = sum(1 for c in rule_text if c.isalpha())
 
         weights = {
-            'length': 1.0,
-            'unique': 1.5,
-            'rotation': 2.0,
-            'branch': 3.0,
-            'variable': 1.5
+            'length': 0.5,  # Reduced from 1.0
+            'unique': 1.0,  # Reduced from 1.5
+            'rotation': 1.5,  # Reduced from 2.0
+            'branch': 2.0,  # Reduced from 3.0
+            'variable': 1.0  # Reduced from 1.5
         }
 
         base_complexity = (
@@ -52,10 +52,11 @@ def calculate_rule_complexity(rules_data, num_iterations=1):
                 variables * weights['variable']
         )
 
-        # Apply iteration factor - complexity grows exponentially with iterations
-        return base_complexity * (1.5 ** num_iterations)
+        # More conservative iteration scaling
+        # Using log base 2 of iterations plus 1 as a multiplier
+        iteration_factor = 1 + (num_iterations * 0.5)
+        return base_complexity * iteration_factor
 
-    # Calculate individual rule complexities
     individual_complexities = {var: single_rule_complexity(rule) for var, rule in rules_data.items()}
     total_complexity = sum(individual_complexities.values())
     avg_complexity = total_complexity / len(rules_data) if rules_data else 0
