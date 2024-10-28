@@ -24,7 +24,7 @@ for line in rules_input.splitlines():
         SYSTEM_RULES[key] = value
 
 
-def calculate_rule_complexity(rules_data, num_iterations=1, angle_increment=0):
+def calculate_rule_complexity(rules_data, num_iterations=1, angle_measure=0):
     """
     Calculate complexity metrics for L-system rules, including angle_increment.
     """
@@ -51,18 +51,18 @@ def calculate_rule_complexity(rules_data, num_iterations=1, angle_increment=0):
                 rotations * weights['rotation'] +
                 branches * weights['branch'] +
                 variables * weights['variable'] +
-                angle_increment * weights['angle']  # Added angle factor
+                angle_measure * weights['angle']  # Added angle factor
         )
 
         # More conservative iteration scaling
         iteration_factor = 1 + (num_iterations * 0.5)
         return base_complexity * iteration_factor
 
-    individual_complexities = {var: single_rule_complexity(rule) for var, rule in rules_data.items()}
-    total_complexity = sum(individual_complexities.values())
-    avg_complexity = total_complexity / len(rules_data) if rules_data else 0
+    individual_complexity_scores = {var: single_rule_complexity(rule) for var, rule in rules_data.items()}
+    total_complexity_score = sum(individual_complexity_scores.values())
+    average_complexity = total_complexity_score / len(rules_data) if rules_data else 0
 
-    return total_complexity, avg_complexity, individual_complexities
+    return total_complexity_score, average_complexity, individual_complexity_scores
 
 
 # Display rule complexity in real-time
@@ -89,9 +89,9 @@ def safe_derivation(start_axiom, steps, timeout=5):
 
 
 # Plotting function
-def plot_l_system(plot_coordinates):
+def plot_l_system(plt_coordinates):
     figure, axis = plt.subplots(figsize=(3.5, 3.5))
-    axis.plot(*zip(*plot_coordinates), lw=0.3, color="forestgreen")
+    axis.plot(*zip(*plt_coordinates), lw=0.3, color="forestgreen")
     axis.axis("equal")
     axis.axis("off")
     return figure
@@ -107,6 +107,5 @@ if st.sidebar.button("Generate L-System"):
 
 # Footer in Sidebar with smaller GitHub link
 st.sidebar.markdown("""
----
-#### See my original Python code on GitHub: [LINK](https://github.com/ambron60/l-system-drawing)
+See my original Python code on GitHub: [LINK](https://github.com/ambron60/l-system-drawing)
 """, unsafe_allow_html=True)
