@@ -10,11 +10,33 @@ st.write(
 
 # Sidebar Inputs for L-System Parameters
 st.sidebar.header("L-System Parameters")
-axiom_input = st.sidebar.text_input("Axiom (Starting Sequence)", "F-F-F-F")
-rules_input = st.sidebar.text_area("Rules (e.g., F -> F+F-F-F+F)", "F -> F-G+F+G-F\nG -> GG")
-iterations = st.sidebar.slider("Iterations", min_value=1, max_value=10, value=5)
-initial_heading = st.sidebar.number_input("Initial Heading (degrees)", min_value=0, max_value=360, value=0)
-angle_increment = st.sidebar.number_input("Angle Increment", min_value=0, max_value=360, value=120)
+
+# State variables to manage input fields and reset on "Clear All"
+if 'axiom' not in st.session_state:
+    st.session_state['axiom'] = "F-F-F-F"
+if 'rules' not in st.session_state:
+    st.session_state['rules'] = "F -> F-G+F+G-F\nG -> GG"
+if 'iterations' not in st.session_state:
+    st.session_state['iterations'] = 5
+if 'initial_heading' not in st.session_state:
+    st.session_state['initial_heading'] = 0
+if 'angle_increment' not in st.session_state:
+    st.session_state['angle_increment'] = 120
+
+# Sidebar inputs, linked to session state for reset capability
+axiom_input = st.sidebar.text_input("Axiom (Starting Sequence)", st.session_state['axiom'], key='axiom')
+rules_input = st.sidebar.text_area("Rules (e.g., F -> F+F-F-F+F)", st.session_state['rules'], key='rules')
+iterations = st.sidebar.slider("Iterations", min_value=1, max_value=10, value=st.session_state['iterations'], key='iterations')
+initial_heading = st.sidebar.number_input("Initial Heading (degrees)", min_value=0, max_value=360, value=st.session_state['initial_heading'], key='initial_heading')
+angle_increment = st.sidebar.number_input("Angle Increment", min_value=0, max_value=360, value=st.session_state['angle_increment'], key='angle_increment')
+
+# Clear All button resets all fields to their default values
+if st.sidebar.button("Clear All Fields"):
+    st.session_state['axiom'] = "F-F-F-F"
+    st.session_state['rules'] = "F -> F-G+F+G-F\nG -> GG"
+    st.session_state['iterations'] = 5
+    st.session_state['initial_heading'] = 0
+    st.session_state['angle_increment'] = 120
 
 # Process rules input into SYSTEM_RULES
 SYSTEM_RULES.clear()
@@ -48,7 +70,7 @@ if complexity > 500:
 # Plotting function with unique variable names
 def plot_l_system(plot_coordinates):
     plot_figure, plot_axis = plt.subplots(figsize=(3.5, 3.5))  # Standard size; scaling is managed by Streamlit width control
-    plot_axis.plot(*zip(*plot_coordinates), lw=0.3, color="tomato")
+    plot_axis.plot(*zip(*plot_coordinates), lw=0.3, color="forestgreen")
     plot_axis.axis("equal")
     plot_axis.axis("off")
     return plot_figure
