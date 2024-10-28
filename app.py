@@ -105,7 +105,6 @@ if st.sidebar.button("Generate L-System"):
 
 # Footer in Sidebar with smaller GitHub link
 st.sidebar.markdown("""
----
 #### See my original Python code on GitHub:  
 [ambron60/l-system-drawing](https://github.com/ambron60/l-system-drawing)
 """, unsafe_allow_html=True)
