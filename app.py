@@ -3,6 +3,19 @@ import matplotlib.pyplot as plt
 from lsystem import derivation, generate_coordinates, SYSTEM_RULES
 import concurrent.futures
 
+# Add CSS to adjust sidebar margin
+st.markdown(
+    """
+    <style>
+        /* Remove the extra space at the top of the sidebar */
+        .css-1d391kg {
+            padding-top: 0 !important;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Title and Description
 st.title("L-System Fractal Generator")
 st.write(
