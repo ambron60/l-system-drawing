@@ -54,7 +54,7 @@ def calculate_rule_complexity(rules_data, num_iterations=1, angle_measure=0):
                 angle_measure * weights['angle']  # Added angle factor
         )
 
-        # More conservative iteration scaling
+        # Iteration scaling
         iteration_factor = 1 + (num_iterations * 0.5)
         return base_complexity * iteration_factor
 
