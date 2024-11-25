@@ -1,4 +1,4 @@
-<img src="/venv/reedplumes.jpg" style="max-height: 100px; max-width: 100px;" alt="">
+<img src="/venv/reedplumes.jpg" width="200" height="300" alt="">
 
 # L-System Graphical Modeling
 
