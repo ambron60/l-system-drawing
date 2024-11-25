@@ -1,4 +1,4 @@
-<img src="/venv/tree.png" alt="">
+<img src="/venv/reedplumes.jpg" alt="">
 
 # L-System Graphical Modeling
 

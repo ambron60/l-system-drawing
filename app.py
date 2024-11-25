@@ -6,7 +6,8 @@ import concurrent.futures
 # Title and Description
 st.title("2D L-System Fractal Generator")
 st.write(
-    "Create fractal patterns using Lindenmayer Systems (L-Systems). Adjust the parameters in the sidebar to generate your custom fractal pattern.")
+    "Create fractal patterns using Lindenmayer Systems (L-Systems). Adjust the parameters in the sidebar to generate your custom fractal pattern."
+)
 
 # Sidebar Inputs for L-System Parameters
 st.sidebar.header("L-System Parameters")
@@ -28,7 +29,6 @@ def calculate_rule_complexity(rules_data, num_iterations=1, angle_measure=0):
     """
     Calculate complexity metrics for L-system rules, including angle_increment.
     """
-
     def single_rule_complexity(rule_text):
         length = len(rule_text)
         unique_symbols = len(set(rule_text))
@@ -37,24 +37,23 @@ def calculate_rule_complexity(rules_data, num_iterations=1, angle_measure=0):
         variables = sum(1 for c in rule_text if c.isalpha())
 
         weights = {
-            'length': 0.5,  # Reduced from 1.0
-            'unique': 1.0,  # Reduced from 1.5
-            'rotation': 1.5,  # Reduced from 2.0
-            'branch': 2.0,  # Reduced from 3.0
-            'variable': 1.0,  # Reduced from 1.5
-            'angle': 0.02  # Weight for angle increment
+            'length': 0.5,
+            'unique': 1.0,
+            'rotation': 1.5,
+            'branch': 2.0,
+            'variable': 1.0,
+            'angle': 0.02
         }
 
         base_complexity = (
-                length * weights['length'] +
-                unique_symbols * weights['unique'] +
-                rotations * weights['rotation'] +
-                branches * weights['branch'] +
-                variables * weights['variable'] +
-                angle_measure * weights['angle']  # Added angle factor
+            length * weights['length'] +
+            unique_symbols * weights['unique'] +
+            rotations * weights['rotation'] +
+            branches * weights['branch'] +
+            variables * weights['variable'] +
+            angle_measure * weights['angle']
         )
 
-        # Iteration scaling
         iteration_factor = 1 + (num_iterations * 0.5)
         return base_complexity * iteration_factor
 
@@ -66,8 +65,9 @@ def calculate_rule_complexity(rules_data, num_iterations=1, angle_measure=0):
 
 
 # Display rule complexity in real-time
-total_complexity, avg_complexity, individual_complexities = calculate_rule_complexity(SYSTEM_RULES, iterations,
-                                                                                      angle_increment)
+total_complexity, avg_complexity, individual_complexities = calculate_rule_complexity(
+    SYSTEM_RULES, iterations, angle_increment
+)
 st.sidebar.subheader("Rule Complexity Metrics")
 st.sidebar.markdown(f"""
 Total Complexity: {total_complexity:.2f}  
@@ -107,6 +107,7 @@ if st.sidebar.button("Generate L-System"):
 
 # Footer in Sidebar with smaller GitHub link
 st.sidebar.markdown("""
-<br>#
-See my original Python code on GitHub: [LINK](https://github.com/ambron60/l-system-drawing)
+---
+#### See my original Python code on GitHub:  
+[ambron60/l-system-drawing](https://github.com/ambron60/l-system-drawing)
 """, unsafe_allow_html=True)
