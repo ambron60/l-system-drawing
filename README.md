@@ -1,4 +1,5 @@
-<img src="/venv/reedplumes.jpg" width="400" height="600" alt="">
+<img src="img/2d-lsystems.png" width="400" height="600" alt="">
+Source: https://allenpike.com/modeling-plants-with-l-systems/
 
 # L-System Graphical Modeling
 
