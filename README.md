@@ -1,6 +1,3 @@
-<img src="img/2d-lsystems.png" width="500" height="480" alt="">
-Source: https://allenpike.com/modeling-plants-with-l-systems/
-
 # L-System Graphical Modeling
 
 An L-system or Lindenmayer system is a parallel rewriting system and a type of formal grammar. An L-system consists of
