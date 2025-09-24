@@ -1,8 +1,4 @@
-<p align="center">
-  <a href="https://williamchyr.com/l-system/">
-    <img src="img/2d-lsystems.png" alt="L-system illustration" />
-  </a>
-</p>
+![Axial Tree Example](/img/axialtree.jpg)
 
 # L-System Graphical Modeling
 
@@ -91,10 +87,10 @@ Enter angle increment (i): 60
 
 For questions or comments:
 
-- Author: **Gianni Perez** @ [skylabus.tech](https://www.skylabus.tech) or at gianni.perez@gmail.com
+- Author: **Gianni Perez** @ [skylabus.tech](https://www.skylabus.tech) or at <gianni.perez@gmail.com>
 - [![](http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png)](http://www.linkedin.com/gianni-perez)
 
-**streamlit.io version at https://l-systems-and-fractals.streamlit.app/**
+**streamlit.io version at <https://l-systems-and-fractals.streamlit.app/>**
 
 ## License
 
