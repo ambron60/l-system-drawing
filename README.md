@@ -1,4 +1,4 @@
-<img src="img/2d-lsystems.png" width="400" height="600" alt="">
+<img src="img/2d-lsystems.png" width="500" height="480" alt="">
 Source: https://allenpike.com/modeling-plants-with-l-systems/
 
 # L-System Graphical Modeling
@@ -43,7 +43,6 @@ input by the user (see [Usage](#usage) section).
 Here's an example of a plant-like generated L-system (Axial Tree) using the bracketed sequence X->F-[[X]+X]+F[+FX]-X F->
 FF. The rest of the parameters, such as the number of iterations (n), is described below.
 
-![Axial Tree](https://s7.gifyu.com/images/ezgif.com-cropcc2d2a5cd782a90b.gif)
 For example, to create a [Dragon Curve](http://mathworld.wolfram.com/DragonCurve.html) enter the following:
 
 ```
