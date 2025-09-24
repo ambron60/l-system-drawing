@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://williamchyr.com/l-system/">
+    <img src="img/2d-lsystems.png" alt="L-system illustration" />
+  </a>
+</p>
+
 # L-System Graphical Modeling
 
 An L-system or Lindenmayer system is a parallel rewriting system and a type of formal grammar. An L-system consists of
