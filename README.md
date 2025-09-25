@@ -26,10 +26,54 @@ Lindenmayer [[Book]](http://algorithmicbotany.org/papers/abop/abop.pdf).
 
 ## Installation
 
-All the code required to get started is in the file (*lsystem.py*). Only a working installation of Python 3 is
-necessary [[LINK]](https://www.python.org/).
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/ambron60/l-system-drawing.git
+   cd l-system-drawing
+   ```
+
+2. Create a virtual environment (recommended):
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Run the application:
+   - **Command-line interface**: `python lsystem.py`
+   - **Web interface**: `streamlit run app.py`
 
 ## Features
+
+### 🎨 **Dual Interface**
+- **Command-line interface**: Interactive terminal-based fractal generator
+- **Web interface**: Beautiful Streamlit web app with real-time visualization
+
+### 🌱 **Built-in Presets**
+- **Dragon Curve** - Complex space-filling curve (13 iterations)
+- **Sierpinski Triangle** - Classic triangular fractal pattern
+- **Koch Curve** - Snowflake-like fractal curve
+- **Hilbert Curve** - Space-filling curve
+- **Axial Tree** - Realistic plant growth simulation
+
+### 🔧 **Advanced Features**
+- **Type-safe code** with comprehensive type hints
+- **Robust error handling** and input validation
+- **Memory protection** for large sequences
+- **Preset system** with easy selection (numbers or names)
+- **Real-time complexity metrics** in web interface
+- **Comprehensive logging** for debugging
+- **Unit tests** with 25 test cases
+
+### 📊 **Visualization Options**
+- **Configurable plot parameters** (size, color, line width)
+- **Statistics display** (sequence length, coordinate points)
+- **High-quality matplotlib rendering**
+- **Export capabilities** for generated fractals
 
 L-systems lie at the heart of this project, enabling users to define custom rules for generating fractals. This project
 supports any fractal pattern that can be represented by iterative rewriting rules, allowing for versatile and creative
@@ -37,55 +81,106 @@ fractal generation. Users can specify parameters such as step size, angle, and i
 explore a wide range of fractal patterns, from plant-like structures to classic shapes such as the Dragon Curve or
 Sierpiński Triangle.
 
-Following the same rewriting rules, this project is capable of
-creating [[Fractals]](http://mathworld.wolfram.com/Fractal.html) of different forms via a recursive given set of rules
-input by the user (see [Usage](#usage) section).
-
 ## Usage
 
-Here's an example of a plant-like generated L-system (Axial Tree) using the bracketed sequence X->F-[[X]+X]+F[+FX]-X F->
-FF. The rest of the parameters, such as the number of iterations (n), is described below.
+### 🌐 **Web Interface (Recommended)**
+1. Run `streamlit run app.py`
+2. Open your browser to the provided URL
+3. Select a preset from the dropdown or create custom rules
+4. Adjust parameters in the sidebar
+5. Click "Generate L-System" to create your fractal
 
-For example, to create a [Dragon Curve](http://mathworld.wolfram.com/DragonCurve.html) enter the following:
+### 💻 **Command-line Interface**
+1. Run `python lsystem.py`
+2. Choose to use a preset or create custom rules
+3. Follow the interactive prompts
 
+#### **Using Presets (Easy Mode)**
 ```
-Enter rule[1]:rewrite term (0 when done): L->L+R+
-Enter rule[2]:rewrite term (0 when done): R->-L-R
-Enter rule[3]:rewrite term (0 when done): 0
-Enter axiom (initial string): L
-Enter number of iterations (n): 10
-Enter step size (segment length): 5
-Enter initial heading (alpha-0): 90
-Enter angle: 90
+L-System Fractal Generator
+==============================
+Use preset L-System? (y/n): y
+
+Available presets:
+  1. dragon_curve
+  2. sierpinski_triangle
+  3. koch_curve
+  4. hilbert_curve
+  5. axial_tree
+
+Enter preset number (1-5) or name: 5
+Using preset: axial_tree
 ```
 
-> **Note**: Step size (segment length) is highly dependent on screen size, etc. Adjust as needed, but a good rule of
-> thumb is a value between 5 and 10.
-
-## Axial Trees and Curves
-
-| Figure                      | Derivation                                                                          |
-|-----------------------------|-------------------------------------------------------------------------------------|
-| Koch Island                 | F->F-F+F+FF-F-F+F w=F-F-F-F n=2 alpha0=90 angle(i)=90                               |
-| Koch (1st variation)        | F->FF-F-F-F-F-F+F w=F-F-F-F n=3 alpha0=90 angle(i)=90                               |
-| Koch Islands and Lakes      | F->F+f-FF+F+FF+Ff+FF-f+FF-F-FF-Ff-FFF f->ffffff w=F+F+F+F n=2 alpha0=90 angle(i)=90 |
-| Cuadratic Snowflake         | F->F+F-F-F+F w=-F n=4 alpha0=90 angle(i)=90                                         |
-| Hexagonal Gosper curve      | L->L+R++R-L--LL-R+ R->-L+RR++R+L--L-R w=L n=4 alpha0=60 angle(i)=60                 |
-| Axial Tree (node-rewriting) | X->F-[[X]+X]+F[+FX]-X F->FF w=X n=5 alpha0=90 angle(i)=22.5                         |
-
-For example, to create a [Sierpiński Triangle](https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle) enter the
-following:
-
+#### **Custom Rules (Advanced Mode)**
 ```
-Enter rule[1]:rewrite term (0 when done): L->R-L-R
-Enter rule[2]:rewrite term (0 when done): R->L+R+L
-Enter rule[3]:rewrite term (0 when done): 0
-Enter axiom (w): L
-Enter number of iterations (n): 6
-Enter step size (segment length): 5
-Enter initial heading (alpha-0): 60
-Enter angle increment (i): 60
+Enter L-System rules in format 'symbol -> replacement' (enter '0' when done):
+Enter rule[1]: F -> F[+F]F[-F]F
+Enter rule[2]: 0
+Enter axiom (starting sequence): F
+Enter number of iterations: 5
+Enter segment length: 1
+Enter initial heading (degrees): 90
+Enter angle increment (degrees): 25
 ```
+
+> **Note**: The program now includes robust input validation and will guide you through any errors.
+
+## Built-in Presets
+
+| Preset | Axiom | Rules | Iterations | Angle | Description |
+|--------|-------|-------|------------|-------|-------------|
+| **Dragon Curve** | `FX` | `X → X+YF+`, `Y → -FX-Y` | 13 | 90° | Complex space-filling curve |
+| **Sierpinski Triangle** | `F-G-G` | `F → F-G+F+G-F`, `G → GG` | 6 | 120° | Classic triangular fractal |
+| **Koch Curve** | `F` | `F → F+F-F-F+F` | 4 | 90° | Snowflake-like fractal curve |
+| **Hilbert Curve** | `A` | `A → -BF+AFA+FB-`, `B → +AF-BFB-FA+` | 4 | 90° | Space-filling curve |
+| **Axial Tree** | `X` | `X → F-[[X]+X]+F[+FX]-X`, `F → FF` | 5 | 22.5° | Realistic plant growth |
+
+## Additional Examples
+
+| Figure | Derivation |
+|--------|------------|
+| Koch Island | `F → F-F+F+FF-F-F+F`, axiom=`F-F-F-F`, n=2, α₀=90°, angle=90° |
+| Koch (1st variation) | `F → FF-F-F-F-F-F+F`, axiom=`F-F-F-F`, n=3, α₀=90°, angle=90° |
+| Koch Islands and Lakes | `F → F+f-FF+F+FF+Ff+FF-f+FF-F-FF-Ff-FFF`, `f → ffffff`, axiom=`F+F+F+F`, n=2, α₀=90°, angle=90° |
+| Quadratic Snowflake | `F → F+F-F-F+F`, axiom=`-F`, n=4, α₀=90°, angle=90° |
+| Hexagonal Gosper curve | `L → L+R++R-L--LL-R+`, `R → -L+RR++R+L--L-R`, axiom=`L`, n=4, α₀=60°, angle=60° |
+
+## Testing
+
+The project includes comprehensive unit tests to ensure reliability:
+
+```bash
+python test_lsystem.py
+```
+
+**Test Coverage:**
+- ✅ Core L-System functionality (derivation, coordinate generation)
+- ✅ Rule parsing and validation
+- ✅ Configuration management
+- ✅ Preset system handling
+- ✅ Error handling and edge cases
+- ✅ Complex sequence generation
+
+**Results:** 25 tests covering all major functionality with 100% pass rate.
+
+## Recent Improvements
+
+### 🚀 **Major Updates**
+- **Enhanced Code Architecture**: Removed global state, added type safety, improved error handling
+- **Dual Interface**: Both command-line and web-based interfaces
+- **Built-in Presets**: 5 classic L-System patterns ready to use
+- **Robust Input Validation**: Prevents crashes from invalid input
+- **Comprehensive Testing**: 25 unit tests with 100% pass rate
+- **Memory Protection**: Prevents excessive memory usage with large sequences
+- **Improved User Experience**: Numbered preset selection, clear error messages
+
+### 🔧 **Technical Improvements**
+- **Type Hints**: Complete type annotations for better code maintainability
+- **Error Handling**: Custom exceptions and graceful error recovery
+- **Logging**: Structured logging for debugging and monitoring
+- **Configuration Management**: Dataclass-based parameter management
+- **Performance**: Optimized coordinate generation and sequence handling
 
 ## Support
 
@@ -94,7 +189,7 @@ For questions or comments:
 - Author: **Gianni Perez** @ [skylabus.tech](https://www.skylabus.tech) or at gianni.perez@gmail.com
 - [![](http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png)](http://www.linkedin.com/gianni-perez)
 
-**streamlit.io version at https://l-systems-and-fractals.streamlit.app/**
+**Live Demo:** [https://l-systems-and-fractals.streamlit.app/](https://l-systems-and-fractals.streamlit.app/)
 
 ## License
 
