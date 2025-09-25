@@ -254,15 +254,15 @@ PRESET_L_SYSTEMS = {
     "koch_curve": LSystemConfig(
         axiom="F",
         rules={"F": "F+F-F-F+F"},
-        iterations=4,
-        segment_length=1,
-        initial_heading=0,
+        iterations=5,
+        segment_length=4,
+        initial_heading=180,
         angle_increment=90
     ),
     "hilbert_curve": LSystemConfig(
         axiom="A",
         rules={"A": "-BF+AFA+FB-", "B": "+AF-BFB-FA+"},
-        iterations=4,
+        iterations=6,
         segment_length=1,
         initial_heading=0,
         angle_increment=90
@@ -270,7 +270,7 @@ PRESET_L_SYSTEMS = {
     "axial_tree": LSystemConfig(
         axiom="X",
         rules={"X": "F-[[X]+X]+F[+FX]-X", "F": "FF"},
-        iterations=5,
+        iterations=6,
         segment_length=1,
         initial_heading=90,
         angle_increment=22.5
