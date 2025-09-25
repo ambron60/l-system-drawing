@@ -132,9 +132,9 @@ Enter angle increment (degrees): 25
 |--------|-------|-------|------------|-------|-------------|
 | **Dragon Curve** | `FX` | `X -> X+YF+`, `Y -> -FX-Y` | 13 | 90° | Complex space-filling curve |
 | **Sierpinski Triangle** | `F-G-G` | `F -> F-G+F+G-F`, `G -> GG` | 6 | 120° | Classic triangular fractal |
-| **Koch Curve** | `F` | `F -> F+F-F-F+F` | 4 | 90° | Snowflake-like fractal curve |
-| **Hilbert Curve** | `A` | `A -> -BF+AFA+FB-`, `B -> +AF-BFB-FA+` | 4 | 90° | Space-filling curve |
-| **Axial Tree** | `X` | `X -> F-[[X]+X]+F[+FX]-X`, `F -> FF` | 5 | 22.5° | Realistic plant growth |
+| **Koch Curve** | `F` | `F -> F+F-F-F+F` | 5 | 90° | Snowflake-like fractal curve |
+| **Hilbert Curve** | `A` | `A -> -BF+AFA+FB-`, `B -> +AF-BFB-FA+` | 6 | 90° | Space-filling curve |
+| **Axial Tree** | `X` | `X -> F-[[X]+X]+F[+FX]-X`, `F -> FF` | 6 | 22.5° | Realistic plant growth |
 
 ## Additional Examples
 
