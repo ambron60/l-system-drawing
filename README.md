@@ -130,21 +130,21 @@ Enter angle increment (degrees): 25
 
 | Preset | Axiom | Rules | Iterations | Angle | Description |
 |--------|-------|-------|------------|-------|-------------|
-| **Dragon Curve** | `FX` | `X → X+YF+`, `Y → -FX-Y` | 13 | 90° | Complex space-filling curve |
-| **Sierpinski Triangle** | `F-G-G` | `F → F-G+F+G-F`, `G → GG` | 6 | 120° | Classic triangular fractal |
-| **Koch Curve** | `F` | `F → F+F-F-F+F` | 4 | 90° | Snowflake-like fractal curve |
-| **Hilbert Curve** | `A` | `A → -BF+AFA+FB-`, `B → +AF-BFB-FA+` | 4 | 90° | Space-filling curve |
-| **Axial Tree** | `X` | `X → F-[[X]+X]+F[+FX]-X`, `F → FF` | 5 | 22.5° | Realistic plant growth |
+| **Dragon Curve** | `FX` | `X -> X+YF+`, `Y -> -FX-Y` | 13 | 90° | Complex space-filling curve |
+| **Sierpinski Triangle** | `F-G-G` | `F -> F-G+F+G-F`, `G -> GG` | 6 | 120° | Classic triangular fractal |
+| **Koch Curve** | `F` | `F -> F+F-F-F+F` | 4 | 90° | Snowflake-like fractal curve |
+| **Hilbert Curve** | `A` | `A -> -BF+AFA+FB-`, `B -> +AF-BFB-FA+` | 4 | 90° | Space-filling curve |
+| **Axial Tree** | `X` | `X -> F-[[X]+X]+F[+FX]-X`, `F -> FF` | 5 | 22.5° | Realistic plant growth |
 
 ## Additional Examples
 
 | Figure | Derivation |
 |--------|------------|
-| Koch Island | `F → F-F+F+FF-F-F+F`, axiom=`F-F-F-F`, n=2, α₀=90°, angle=90° |
-| Koch (1st variation) | `F → FF-F-F-F-F-F+F`, axiom=`F-F-F-F`, n=3, α₀=90°, angle=90° |
-| Koch Islands and Lakes | `F → F+f-FF+F+FF+Ff+FF-f+FF-F-FF-Ff-FFF`, `f → ffffff`, axiom=`F+F+F+F`, n=2, α₀=90°, angle=90° |
-| Quadratic Snowflake | `F → F+F-F-F+F`, axiom=`-F`, n=4, α₀=90°, angle=90° |
-| Hexagonal Gosper curve | `L → L+R++R-L--LL-R+`, `R → -L+RR++R+L--L-R`, axiom=`L`, n=4, α₀=60°, angle=60° |
+| Koch Island | `F -> F-F+F+FF-F-F+F`, axiom=`F-F-F-F`, n=2, α₀=90°, angle=90° |
+| Koch (1st variation) | `F -> FF-F-F-F-F-F+F`, axiom=`F-F-F-F`, n=3, α₀=90°, angle=90° |
+| Koch Islands and Lakes | `F -> F+f-FF+F+FF+Ff+FF-f+FF-F-FF-Ff-FFF`, `f -> ffffff`, axiom=`F+F+F+F`, n=2, α₀=90°, angle=90° |
+| Quadratic Snowflake | `F -> F+F-F-F+F`, axiom=`-F`, n=4, α₀=90°, angle=90° |
+| Hexagonal Gosper curve | `L -> L+R++R-L--LL-R+`, `R -> -L+RR++R+L--L-R`, axiom=`L`, n=4, α₀=60°, angle=60° |
 
 ## Testing
 
