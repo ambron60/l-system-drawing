@@ -238,7 +238,7 @@ PRESET_L_SYSTEMS = {
     "dragon_curve": LSystemConfig(
         axiom="FX",
         rules={"X": "X+YF+", "Y": "-FX-Y"},
-        iterations=13,
+        iterations=11,
         segment_length=1,
         initial_heading=0,
         angle_increment=90

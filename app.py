@@ -33,7 +33,7 @@ if use_preset != "Custom":
         iterations = preset_config.iterations
         initial_heading = preset_config.initial_heading
         angle_increment = preset_config.angle_increment
-        segment_length = preset_config.segment_length
+        segment_length = float(preset_config.segment_length)
         
         # Show preset info
         st.sidebar.info(f"Using preset: {use_preset}")
@@ -45,7 +45,7 @@ if use_preset != "Custom":
             iterations = st.sidebar.slider("Iterations", min_value=1, max_value=10, value=iterations)
             initial_heading = st.sidebar.number_input("Initial Heading (degrees)", min_value=0, max_value=360, value=initial_heading)
             angle_increment = st.sidebar.number_input("Angle Increment", min_value=0, max_value=360, value=angle_increment)
-            segment_length = st.sidebar.number_input("Segment Length", min_value=0.1, max_value=10.0, value=segment_length)
+            segment_length = st.sidebar.number_input("Segment Length", min_value=0.1, max_value=10.0, value=float(segment_length))
     except LSystemError as e:
         st.sidebar.error(f"Error loading preset: {e}")
         use_preset = "Custom"
